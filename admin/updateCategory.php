@@ -4,7 +4,7 @@ include_once('header.php');
 <div class="container" style="text-align: center;">
     <h1>Update Category</h1>
     <?php 
-    $conn = mysqli_connect('localhost','root','','news-site');
+    include_once('config.php');
     $category_id = $_GET['id'];
     $sql1 = "select * from category where category_id = '{$category_id}'";
     $result1 = mysqli_query($conn,$sql1);
@@ -24,7 +24,7 @@ if(isset($_POST['add_category'])){
     $category = $_POST['category'];
     $sql = "update category set category_name = '{$category}' where category_id = '{$category_id}'";
     $result = mysqli_query($conn,$sql) or die("Query Failed");
-    header("Location: http://localhost/news-site/admin/category.php");
+    header("Location: {$PATH}category.php");
     mysqli_close($conn);
 }
 ?>

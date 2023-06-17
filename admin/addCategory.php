@@ -10,13 +10,13 @@ include_once('header.php');
     </form>
 </div>
 
-<?php 
-if(isset($_POST['add_category'])){
+<?php
+if (isset($_POST['add_category'])) {
     $category = $_POST['category'];
-    $conn = mysqli_connect('localhost','root','','news-site');
+    include_once('config.php');
     $sql = "insert into category(category_name) values('{$category}')";
-    $result = mysqli_query($conn,$sql) or die("Query Failed");
-    header("Location: http://localhost/news-site/admin/category.php");
+    $result = mysqli_query($conn, $sql) or die("Query Failed");
+    header("Location: {$PATH}category.php");
     mysqli_close($conn);
 }
 ?>

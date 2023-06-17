@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$conn = mysqli_connect('localhost','root','','news-site');
+include_once('config.php');
 $title = mysqli_real_escape_string($conn,$_POST['title']);
 $description = mysqli_real_escape_string($conn,$_POST['description']);
 $category = mysqli_real_escape_string($conn,$_POST['category']);
@@ -22,7 +22,7 @@ if(isset($_FILES['post-img'])){
 $sql = "insert into post(title,description,category,author,post_date,post_img) values('{$title}','{$description}','{$category}','{$author}','{$date}','{$file_name}')";
 $sql."update category set post = post + 1 where category_id = '{$category}'";
 if(mysqli_multi_query($conn,$sql)){
-    header('Location:http://localhost/news-site/admin/post.php');
+    header("Location:{$PATH}post.php");
 }else{
     echo 'Error';
 }

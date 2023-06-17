@@ -1,7 +1,7 @@
-<?php 
+<?php
 session_start();
-if(isset($_SESSION['username'])){
-    header('Location:http://localhost/news-site/admin/post.php');
+if (isset($_SESSION['username'])) {
+    header("Location:{$PATH}post.php");
 }
 ?>
 
@@ -32,14 +32,14 @@ if(isset($_SESSION['username'])){
         </form>
         <?php
         if (isset($_POST['submit'])) {
-            $conn = mysqli_connect('localhost','root','','news-site');
+            include_once('config.php');
             $username = mysqli_real_escape_string($conn, $_POST['username']);
             $password = mysqli_real_escape_string($conn, md5($_POST['password']));
 
             $sql = "select user_id,username,role from user where username='{$username}' and password='{$password}'";
-            $result = mysqli_query($conn,$sql) or die('Query failed');
-            if(mysqli_num_rows($result) > 0){
-                while($row = mysqli_fetch_assoc($result)){
+            $result = mysqli_query($conn, $sql) or die('Query failed');
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
                     session_start();
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['role'] = $row['role'];
@@ -47,7 +47,7 @@ if(isset($_SESSION['username'])){
 
                     header('Location:http://localhost/news-site/admin/post.php');
                 }
-            }else{
+            } else {
                 echo '<p>No matching password and username</p>';
             }
         }

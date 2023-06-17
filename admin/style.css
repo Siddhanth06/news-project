@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    max-width: 130rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.add_user_form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.add_user_fields{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_user_vector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_user_vector img{
+    width: 100%;
+}
+
+.add_user{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 3rem;
+    width: 100%;
+    padding: 2rem;
+}
+
+label{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: .5rem;
+}
+
+.input{
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    border-radius: .5rem;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: .3s;
+}
+
+#select {
+    height: 4rem;
+    width: 100%;
+    padding: 0rem 1rem;
+    font-size: 1.8rem;
+}
+
+.add_user_btn{
+    margin-top: 2rem;
+    padding: 1rem 1rem;
+    font-size: 2rem;
+    color: white;
+    background-color: rgb(129, 30, 129);
+    border: none;
+    border-radius: 10px;
+}
+
+.add_user_btn:hover{
+    background-color: rgb(104, 12, 104);
+}
+
+
+/*admin header*/
+.header{
+    background-color: rgb(40, 123, 224);
+    display: flex;  
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* users table*/
+.users_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 7rem;
+    font-size: 1.7rem;
+}
+.users_header p{
+    font-weight: 700;
+    font-size: 2rem;
+}
+.users_header button{
+    background-color: rgb(40, 123, 224);
+    color: white;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+}
+.pagination_btns{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.pagination_btns button{
+    background-color: rgb(40, 123, 224);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tables_nav ul li a{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+.tables_nav ul{
+    
+    list-style: none;
+    padding: 1rem 7rem;
+    display: flex;
+    gap: 2rem;
+    font-size: 1.4rem;
+    background-color: #333;
+    color: white;
+}
+
+.logout_btn{
+    text-decoration: none;
+    color: white;
+}
+
+
+.add_category_btn{
+    margin-top: 2rem;
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgb(129, 30, 129);
+    border: none;
+    border-radius: 10px;
+}
+
+.add_category_link{
+    color: white;
+    text-decoration: none;
+}
